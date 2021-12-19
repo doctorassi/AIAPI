@@ -1,0 +1,5 @@
+name: AIAPI
+author: AIPaskie
+version: .0.0.1
+main: nl.aipaskie.aiapi.AIApi
+description: AIPaskie Main API
