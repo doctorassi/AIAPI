@@ -23,7 +23,7 @@ public class MessageType{
     public void BROADCAST (String s){
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[" + ChatColor.RED + "SERVER" + ChatColor.YELLOW + "] " + ChatColor.WHITE + s);
     }
-    public void firstJoin(Player p,String s){
+    public void firstJoin(Player p){
         BROADCAST(ChatColor.AQUA + p.getName() + ChatColor.WHITE + " Has joineed the server for the first time!");
         p.sendMessage("Welcome to the AIPVP server!");
         p.sendMessage("do /intro to do a tour about this network!");

@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>nl.aipaskie</groupId>
-    <artifactId>AI-Api</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>nl.aipaskie.doctorassi</groupId>
+    <artifactId>AIAPI</artifactId>
+    <version>0.0.0.1</version>
     <packaging>jar</packaging>
 
     <name>AI Api</name>
@@ -60,6 +60,10 @@
         <repository>
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>jinpack</id>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 
