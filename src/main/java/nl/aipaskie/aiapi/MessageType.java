@@ -8,16 +8,16 @@ public class MessageType{
 
     public String discordLink = "Test";
 
-    public final void NOTICE(Player p , String[] s){
+    public final void NOTICE(Player p , String s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "NOTICE" + ChatColor.WHITE + "] " + s);
     }
-    public final void SERVER(Player p , String[] s) {
+    public final void SERVER(Player p , String s) {
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "SERVER " + ChatColor.WHITE + "] " + s);
     }
-    public final static void WARNING(Player p , String[] s){
+    public final static void WARNING(Player p , String s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "WARNING " + ChatColor.WHITE + "] " + s);
     }
-    public final static void AIPVP(Player p , String[] s){
+    public final static void AIPVP(Player p , String s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "PVP" + ChatColor.WHITE + "] " + s);
     }
     public final void BROADCAST (String s){
