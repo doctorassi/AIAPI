@@ -6,7 +6,7 @@
 
     <groupId>nl.aipaskie.doctorassi</groupId>
     <artifactId>AIAPI</artifactId>
-    <version>0.0.0.1</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>AI Api</name>
