@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 
 public class MessageType{
 
-    public String discordLink = "";
+    public String discordLink = "Test";
 
     public void NOTICE(Player p , String s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "NOTICE" + ChatColor.WHITE + "] " + s);
