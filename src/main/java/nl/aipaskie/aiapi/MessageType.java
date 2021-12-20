@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 
 public class MessageType{
 
-    public String discordLink = "https://discord.gg/eJYBnqtpUA";
+    public String discordLink = "";
 
     public void NOTICE(Player p , String s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "NOTICE" + ChatColor.WHITE + "] " + s);
