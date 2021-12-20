@@ -8,19 +8,19 @@ public class MessageType{
 
     public String discordLink = "Test";
 
-    public void NOTICE(Player p , String s){
+    public final void NOTICE(Player p , String[] s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "NOTICE" + ChatColor.WHITE + "] " + s);
     }
-    public void SERVER(Player p , String s) {
+    public final void SERVER(Player p , String[] s) {
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "SERVER " + ChatColor.WHITE + "] " + s);
     }
-    public static void WARNING(Player p , String s){
+    public final static void WARNING(Player p , String[] s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "WARNING " + ChatColor.WHITE + "] " + s);
     }
-    public static void AIPVP(Player p , String s){
+    public final static void AIPVP(Player p , String[] s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "PVP" + ChatColor.WHITE + "] " + s);
     }
-    public void BROADCAST (String s){
+    public final void BROADCAST (String s){
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[" + ChatColor.RED + "SERVER" + ChatColor.YELLOW + "] " + ChatColor.WHITE + s);
     }
     public void firstJoin(Player p){
@@ -30,6 +30,4 @@ public class MessageType{
         p.sendMessage("Discord: " + discordLink);
         p.sendMessage("We wish u a nice pvp experience!");
     }
-
-
 }

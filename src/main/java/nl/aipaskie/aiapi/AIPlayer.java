@@ -6,6 +6,8 @@ import org.bukkit.potion.PotionEffect;
 
 public class AIPlayer {
 
+    public Money money;
+
     // Gamemode
     public static String getGamemode(Player player){
         return player.getGameMode().name();
@@ -39,11 +41,4 @@ public class AIPlayer {
     public double getMaxHealth(Player p){
         return p.getMaxHealth();
     }
-    //Money
-    public int getBlance(){//Get Balance
-        return 1;
-         }
-    public void addBalance(){}
-    public void removeBalance(){}
-    public void setBalance(){}
 }
