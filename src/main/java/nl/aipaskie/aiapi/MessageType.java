@@ -13,7 +13,6 @@ public class MessageType{
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "NOTICE" + ChatColor.WHITE + "] " + s);
     }
      public static void SERVER(Player p, String s) {
-        Tokens.NetworkToken.getBalance(p);
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "SERVER " + ChatColor.WHITE + "] " + s);
     }
     public static void WARNING(Player p , String s){
