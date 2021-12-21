@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public final class AIApi extends JavaPlugin {
+public class AIApi extends JavaPlugin {
 
     public AIPlayer aiPlayer;
     public MessageType messageType;
