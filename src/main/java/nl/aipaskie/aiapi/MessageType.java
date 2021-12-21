@@ -9,33 +9,25 @@ public class MessageType{
     private static String discordLink;
     private AIApi plugin;
 
-    public static String SERVER = ChatColor.WHITE + "[" + ChatColor.RED + "SERVER " + ChatColor.WHITE + "] ";
-
-    public MessageType(AIApi plugin){
-        this.plugin = plugin;
-    }
-
     public static void NOTICE(Player p, String s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "NOTICE" + ChatColor.WHITE + "] " + s);
     }
-  //   public static String SERVER(Player player, String s) {
-  //      p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "SERVER " + ChatColor.WHITE + "] " + s);;
-  //  }
+     public static void SERVER(Player p, String s) {
+        p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "SERVER " + ChatColor.WHITE + "] " + s);
+    }
     public static void WARNING(Player p , String s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "WARNING " + ChatColor.WHITE + "] " + s);
     }
     public static void AIPVP(Player p , String s){
-        p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "PVP" + ChatColor.WHITE + "] " + s);
+        p.sendMessage(ChatColor.YELLOW + "[" + ChatColor.RED + "AI PVP" + ChatColor.YELLOW + "] " + ChatColor.WHITE + s);
     }
     public static void BROADCAST (String s){
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[" + ChatColor.RED + "SERVER" + ChatColor.YELLOW + "] " + ChatColor.WHITE + s);
     }
-    public static void firstJoin(Player player){
-        Player p = Bukkit.getPlayer(player.getUniqueId());
-        //BROADCAST(ChatColor.AQUA + p.getName() + ChatColor.WHITE + " Has joineed the server for the first time!");
-        p.sendMessage("Welcome to the AIPVP server!");
-        p.sendMessage("do /intro to do a tour about this network!");
-        p.sendMessage("Discord: " + discordLink);
-        p.sendMessage("We wish u a nice pvp experience!");
+    public static void firstJoin(Player p){
+        BROADCAST(ChatColor.AQUA + p.getName() + ChatColor.WHITE + " Has joineed the server for the first time!");
+        p.sendMessage(ChatColor.YELLOW + "Welcome to the " +ChatColor.RED +  "AIPVP Network!");
+        p.sendMessage(ChatColor.YELLOW + "do /intro to do a tour about this network!");
+        p.sendMessage(ChatColor.YELLOW + "We wish u a nice pvp experience!");
     }
 }

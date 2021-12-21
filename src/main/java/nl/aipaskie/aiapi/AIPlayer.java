@@ -22,29 +22,29 @@ public class AIPlayer {
         p.setGameMode(gamemode);
     }
     //Health
-    public void heal(Player p){
+    public static void heal(Player p){
         p.setHealth(20);
         p.setFoodLevel(20);
         for (PotionEffect e : p.getActivePotionEffects()){
             p.removePotionEffect(e.getType());
         }
     }
-    public void setFood(Player p, int i){
+    public static void setFood(Player p, int i){
         p.setFoodLevel(i);
     }
-    public int getFood(Player p){
+    public static int getFood(Player p){
         return p.getFoodLevel();
     }
-    public void setHealth(Player p, int i){
+    public static void setHealth(Player p, int i){
         p.setHealth(i);
     }
-    public double getHealth(Player p) {
+    public static double getHealth(Player p){
         return p.getHealth();
     }
-    public void setMaxHealth(Player p, int i){
+    public static void setMaxHealth(Player p, int i){
         p.setMaxHealth(i);
     }
-    public double getMaxHealth(Player p){
+    public static double getMaxHealth(Player p){
         return p.getMaxHealth();
     }
 }
