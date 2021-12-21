@@ -9,6 +9,8 @@ public class MessageType{
     private static String discordLink;
     private AIApi plugin;
 
+    public static String SERVER = ChatColor.WHITE + "[" + ChatColor.RED + "SERVER " + ChatColor.WHITE + "] ";
+
     public MessageType(AIApi plugin){
         this.plugin = plugin;
     }
@@ -16,10 +18,9 @@ public class MessageType{
     public static void NOTICE(Player p, String s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "NOTICE" + ChatColor.WHITE + "] " + s);
     }
-    public static void SERVER(Player player, String s) {
-        Player p = Bukkit.getPlayer(player.getUniqueId());
-        p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "SERVER " + ChatColor.WHITE + "] " + s);;
-    }
+  //   public static String SERVER(Player player, String s) {
+  //      p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "SERVER " + ChatColor.WHITE + "] " + s);;
+  //  }
     public static void WARNING(Player p , String s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "WARNING " + ChatColor.WHITE + "] " + s);
     }
