@@ -12,11 +12,11 @@ public class AIPlayer {
         this.plugin = plugin;
     }
 
-    public Money money;
+    public static Tokens tokens;
 
     // Gamemode
-    public static String getGamemode(Player player){
-        return player.getGameMode().name();
+    public static GameMode getGamemode(Player player){
+        return player.getGameMode();
     }
     public static void setGamemode(Player p, GameMode gamemode){
         p.setGameMode(gamemode);
