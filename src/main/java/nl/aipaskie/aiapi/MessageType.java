@@ -7,7 +7,6 @@ import org.bukkit.entity.Player;
 public class MessageType{
 
     private static String discordLink;
-    private AIApi plugin;
 
     public static void NOTICE(Player p, String s){
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "NOTICE" + ChatColor.WHITE + "] " + s);
