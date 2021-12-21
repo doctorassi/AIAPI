@@ -19,7 +19,7 @@ public class AIApi extends JavaPlugin {
     @Override
     public void onEnable() {
         aiPlayer = new AIPlayer(this);
-        messageType = new MessageType(this);
+        messageType = new MessageType();
         loadConfig();
         mysqlSetup();
     }
