@@ -6,6 +6,12 @@ import org.bukkit.potion.PotionEffect;
 
 public class AIPlayer {
 
+    private AIApi plugin;
+
+    public AIPlayer(AIApi plugin){
+        this.plugin = plugin;
+    }
+
     public Money money;
 
     // Gamemode
