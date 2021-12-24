@@ -12,10 +12,10 @@ public class MessageType{
         p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "NOTICE" + ChatColor.WHITE + "] " + s);
     }
      public static void SERVER(Player p, String s) {
-        p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "SERVER " + ChatColor.WHITE + "] " + s);
+        p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "SERVER" + ChatColor.WHITE + "] " + s);
     }
     public static void WARNING(Player p , String s){
-        p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "WARNING " + ChatColor.WHITE + "] " + s);
+        p.sendMessage(ChatColor.WHITE + "[" + ChatColor.RED + "WARNING" + ChatColor.WHITE + "] " + s);
     }
     public static void AIPVP(Player p , String s){
         p.sendMessage(ChatColor.YELLOW + "[" + ChatColor.RED + "AI PVP" + ChatColor.YELLOW + "] " + ChatColor.WHITE + s);

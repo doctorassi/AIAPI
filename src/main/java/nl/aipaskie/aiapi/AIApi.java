@@ -22,6 +22,8 @@ public class AIApi extends JavaPlugin {
         messageType = new MessageType();
         loadConfig();
         mysqlSetup();
+        getServer().getPluginManager().registerEvents(new RankPrefix(), this);
+        getServer().getPluginManager().registerEvents(new sqlGet(), this);
     }
 
     @Override
@@ -40,6 +42,7 @@ public class AIApi extends JavaPlugin {
         database = "playerdata";
         username = "root";
         password = "pupu";
+        table = "player_network_stats";
 
         try{
 
@@ -60,14 +63,11 @@ public class AIApi extends JavaPlugin {
             e.printStackTrace();
         }
     }
-
     public Connection getConnection() {
         return connection;
     }
-
     public void setConnection(Connection connection) {
         this.connection = connection;
     }
-
 
 }
