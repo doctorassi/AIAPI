@@ -114,7 +114,7 @@ public class sqlGet implements Listener {
     public void updateEXP(UUID uuid) {
         try {
             PreparedStatement statement = plugin.getConnection()
-                    .prepareStatement("UPDATE " + plugin.table + " SET COINS=? WHERE UUID=?");
+                    .prepareStatement("UPDATE " + plugin.table + " SET EXP=? WHERE UUID=?");
             statement.setInt(1, 500);
             statement.setString(2, uuid.toString());
             statement.executeUpdate();
@@ -130,7 +130,7 @@ public class sqlGet implements Listener {
         } else {
             try {
                 PreparedStatement statement = plugin.getConnection()
-                        .prepareStatement("UPDATE " + plugin.table + " SET COINS=? WHERE UUID=?");
+                        .prepareStatement("UPDATE " + plugin.table + " SET EXP=? WHERE UUID=?");
                 statement.setInt(1, getCoins(uuid) + 10);
                 statement.setString(2, uuid.toString());
                 statement.executeUpdate();
@@ -149,8 +149,8 @@ public class sqlGet implements Listener {
             ResultSet results = statement.executeQuery();
             results.next();
 
-            System.out.print(results.getInt("COINS"));
-            return results.getInt("COINS");
+            System.out.print(results.getInt("EXP"));
+            return results.getInt("EXP");
         } catch (SQLException e) {
             e.printStackTrace();
         }
