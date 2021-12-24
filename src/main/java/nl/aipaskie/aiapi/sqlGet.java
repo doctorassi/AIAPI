@@ -22,11 +22,6 @@ public class sqlGet implements Listener {
         createPlayer(player.getUniqueId(), player);
     }
 
-    @EventHandler
-    public void hit(PlayerInteractEvent event) {
-        addCoins(event.getPlayer().getUniqueId() , 10);
-    }
-
     public boolean playerExists(UUID uuid) {
         try {
             PreparedStatement statement = plugin.getConnection()
@@ -60,7 +55,7 @@ public class sqlGet implements Listener {
                 insert.setString(1, uuid.toString());
                 insert.setString(2, player.getName());
                 insert.setInt(3, 500);
-                insert.setInt(4, 0);
+                insert.setInt(4, 7);
                 insert.executeUpdate();
 
                 plugin.getServer().broadcastMessage(ChatColor.GREEN + "Player Inserted");
@@ -90,7 +85,7 @@ public class sqlGet implements Listener {
             try {
                 PreparedStatement statement = plugin.getConnection()
                         .prepareStatement("UPDATE " + plugin.table + " SET COINS=? WHERE UUID=?");
-                statement.setInt(1, getCoins(uuid) + amount);
+                statement.setInt(1, getCoins(uuid) + 10);
                 statement.setString(2, uuid.toString());
                 statement.executeUpdate();
             } catch (SQLException e) {
@@ -119,12 +114,29 @@ public class sqlGet implements Listener {
     public void updateEXP(UUID uuid) {
         try {
             PreparedStatement statement = plugin.getConnection()
-                    .prepareStatement("UPDATE " + plugin.table + " SET EXP=? WHERE UUID=?");
-            statement.setInt(1, 1000);
+                    .prepareStatement("UPDATE " + plugin.table + " SET COINS=? WHERE UUID=?");
+            statement.setInt(1, 500);
             statement.setString(2, uuid.toString());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+
+    }
+
+    public void addEXP(UUID uuid, int amount) {
+        if(getCoins(uuid) == -1){
+            System.out.print("FAILED GETTING COINS STATS");
+        } else {
+            try {
+                PreparedStatement statement = plugin.getConnection()
+                        .prepareStatement("UPDATE " + plugin.table + " SET COINS=? WHERE UUID=?");
+                statement.setInt(1, getCoins(uuid) + 10);
+                statement.setString(2, uuid.toString());
+                statement.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
     }
@@ -137,30 +149,17 @@ public class sqlGet implements Listener {
             ResultSet results = statement.executeQuery();
             results.next();
 
-            System.out.print(results.getInt("EXP"));
-            return results.getInt("EXP");
+            System.out.print(results.getInt("COINS"));
+            return results.getInt("COINS");
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return -1;
     }
 
-    public void addEXP(UUID uuid, int amount) {
-        try {
-            PreparedStatement statement = plugin.getConnection()
-                    .prepareStatement("SELECT * FROM " + plugin.table + " WHERE UUID=?");
-            statement.setString(1, uuid.toString());
-            ResultSet results = statement.executeQuery();
-            results.next();
-
-            System.out.print(results.getInt("EXP"));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public int getLevel(UUID uuid){
+        return calculateLevelForExp(getEXP(uuid));
     }
-
-
 
     private static int calculateLevelForExp(int exp) {
         int level = 0;
