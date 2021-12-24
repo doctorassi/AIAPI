@@ -12,6 +12,7 @@ public class AIApi extends JavaPlugin {
 
     public AIPlayer aiPlayer;
     public MessageType messageType;
+    public sqlGet sqlget;
     private Connection connection;
     public String host, database, username, password, table;
     public int port;
@@ -20,6 +21,7 @@ public class AIApi extends JavaPlugin {
     public void onEnable() {
         aiPlayer = new AIPlayer(this);
         messageType = new MessageType();
+        sqlget = new sqlGet();
         loadConfig();
         mysqlSetup();
         getServer().getPluginManager().registerEvents(new RankPrefix(), this);
